@@ -1,0 +1,9 @@
+torch
+torchvision
+tensorboard
+PyYAML
+scikit-image
+imagecodecs
+torchmetrics
+pandas
+matplotlib

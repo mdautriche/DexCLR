@@ -1,0 +1,32 @@
+# datasets
+dataset_dir: "./datasets/dataset_Name/"
+valid_ratio: 0.2
+ext_imgs: [".tif", ".jpg"]
+
+# train options
+seed: 42 # sacred handles automatic seeding when passed in the config
+batch_size: 8 #32 #128
+image_size: 256
+start_epoch: 0
+epochs: 100
+dataset: "CUSTOM" #"CIFAR10" # STL10 
+
+# model options
+projection_dim: 64 # "[...] to project the representation to a 64-dimensional latent space"
+nb_class: 1  # number of classes
+nb_channels: 3 # number of input chanells to the model
+phase: "pretrain" # phase of Pretraining or Finetuning
+lr: None # Learning Rate initialisation see optimizer
+
+# loss options
+optimizer: "Adam"
+temperature: 0.5 # see appendix B.7.: Optimal temperature under different batch sizes
+
+# reload options
+model_path: "save" # set to the directory containing `checkpoint_##.tar
+epoch_num: 100 # set to checkpoint number
+load_freeze: False
+
+# logistic regression options
+logistic_batch_size: 256
+logistic_epochs: 500
